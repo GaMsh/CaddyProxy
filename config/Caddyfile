@@ -6,7 +6,7 @@
 }
 
 tile.esya.ru {
-    respond "yeap!"
+    respond "yeap! -- 5"
 #    reverse_proxy tile_esya_ru:80
 #
 #    @404-410 `{err.status_code} in [404, 410]`
