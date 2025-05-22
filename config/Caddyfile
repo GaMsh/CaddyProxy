@@ -7,4 +7,9 @@
 
 tile.esya.ru {
     reverse_proxy site1_app:80
+
+    handle_errors {
+        @5xx status 500-599
+        respond @5xx "<html><head><title>Site2.ru - Недоступен</title></head><body><h1>Ой! Site2.ru временно недоступен.</h1><p>Мы уже работаем над устранением проблемы. Пожалуйста, попробуйте позже.</p></body></html>" 503
+    }
 }
