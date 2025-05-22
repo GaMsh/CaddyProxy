@@ -14,33 +14,6 @@ services:
     networks:
       - web_network
 
-  site1_app:
-    image: dunglas/frankenphp:latest-php8.3-alpine
-    container_name: site1_frankenphp
-    restart: unless-stopped
-    volumes:
-      - ./site1.com:/app
-    networks:
-      - web_network
-
-  site2_app:
-    image: dunglas/frankenphp:latest-php8.3-alpine
-    container_name: site2_frankenphp
-    restart: unless-stopped
-    volumes:
-      - ./site2.ru:/app
-    networks:
-      - web_network
-
-  another_app:
-    image: dunglas/frankenphp:latest-php8.3-alpine
-    container_name: another_app_frankenphp
-    restart: unless-stopped
-    volumes:
-      - ./another-app.com:/app
-    networks:
-      - web_network
-
 networks:
   web_network:
     driver: bridge
