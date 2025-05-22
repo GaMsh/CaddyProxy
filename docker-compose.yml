@@ -3,6 +3,8 @@ services:
     image: caddy:latest
     container_name: caddy_main_proxy
     restart: unless-stopped
+    environment:
+      CADDY_INGRESS_NETWORKS: web_network
     ports:
       - "80:80"
       - "443:443"
