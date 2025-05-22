@@ -6,19 +6,20 @@
 }
 
 tile.esya.ru {
-    reverse_proxy tile_esya_ru:80
-
-    @404-410 `{err.status_code} in [404, 410]`
-    handle @404-410 {
-        respond "It's a 404 or 410 error!"
-    }
-
-    @5xx `{err.status_code} >= 500 && {err.status_code} < 600`
-    handle @5xx {
-        respond "It's a 5xx error."
-    }
-
-    handle {
-        respond "It's another error"
-    }
+    respond "yeap!"
+#    reverse_proxy tile_esya_ru:80
+#
+#    @404-410 `{err.status_code} in [404, 410]`
+#    handle @404-410 {
+#        respond "It's a 404 or 410 error!"
+#    }
+#
+#    @5xx `{err.status_code} >= 500 && {err.status_code} < 600`
+#    handle @5xx {
+#        respond "It's a 5xx error."
+#    }
+#
+#    handle {
+#        respond "It's another error"
+#    }
 }
