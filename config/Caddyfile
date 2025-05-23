@@ -1,6 +1,6 @@
 {
-    header server esya
-    header -via
+    header Server esya
+    header -Via
 
     log {
         output stdout
