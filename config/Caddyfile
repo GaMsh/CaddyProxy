@@ -1,8 +1,8 @@
 {
-    header {
-        Server esya
-        -Via
-    }
+#    header {
+#        Server esya
+#        -Via
+#    }
 
     log {
         output stdout
@@ -15,6 +15,9 @@ tile.esya.ru {
     reverse_proxy tile_esya_ru:80 {
         header_down Cache-Control "max-age=5184000, public"
     }
+
+    encode gzip
+    file_server
 #
 #    @404-410 `{err.status_code} in [404, 410]`
 #    handle @404-410 {
