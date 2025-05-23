@@ -1,6 +1,6 @@
 {
-    header -Server
-    header -Via
+    header -server
+    header -via
 
     log {
         output stdout
@@ -13,6 +13,7 @@ tile.esya.ru {
     reverse_proxy tile_esya_ru:80 {
         header_down Cache-Control "max-age=5184000, public"
     }
+    header -permissions-policy
 #
 #    @404-410 `{err.status_code} in [404, 410]`
 #    handle @404-410 {
