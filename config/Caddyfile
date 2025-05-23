@@ -1,7 +1,8 @@
 {
-
-    header Server esya
-    header -Via
+    header {
+        Server esya
+        -Via
+    }
 
     log {
         output stdout
