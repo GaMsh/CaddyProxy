@@ -1,4 +1,7 @@
 {
+    header -Server
+    header -Via
+
     log {
         output stdout
         format console
