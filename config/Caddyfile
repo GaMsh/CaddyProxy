@@ -1,7 +1,6 @@
 {
     header -server
     header -via
-    header -permissions-policy
 
     log {
         output stdout
