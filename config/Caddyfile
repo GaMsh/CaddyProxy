@@ -34,7 +34,7 @@ tile.esya.ru {
 }
 
 
-new.bigapi.ru {
+bigapi.ru {
     header {
         Server esya-web-engine
         -Via
