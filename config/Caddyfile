@@ -35,6 +35,8 @@ tile.esya.ru {
 
 
 bigapi.ru {
+    auto_https disable_redirects
+
     header {
         Server esya-web-engine
         -Via
