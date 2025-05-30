@@ -7,7 +7,7 @@
 
 tile.esya.ru {
     header {
-        Server esya
+        Server esya-web-engine
         -Via
     }
 
@@ -35,6 +35,11 @@ tile.esya.ru {
 
 
 new.bigapi.ru {
+    header {
+        Server esya-web-engine
+        -Via
+    }
+
     reverse_proxy new_bigapi_ru:80 {
 #        header_down Cache-Control "max-age=5184000, public"
     }
