@@ -1,8 +1,8 @@
 {
-#    header {
-#        Server esya
-#        -Via
-#    }
+    header {
+        Server esya
+        -Via
+    }
 
     log {
         output stdout
@@ -11,7 +11,6 @@
 }
 
 tile.esya.ru {
-#    respond "yeap! -- 5"
     reverse_proxy tile_esya_ru:80 {
         header_down Cache-Control "max-age=5184000, public"
     }
@@ -32,4 +31,14 @@ tile.esya.ru {
 #    handle {
 #        respond "It's another error"
 #    }
+}
+
+
+new.bigapi.ru {
+    reverse_proxy new_bigapi_ru:80 {
+#        header_down Cache-Control "max-age=5184000, public"
+    }
+
+    encode gzip
+    file_server
 }
