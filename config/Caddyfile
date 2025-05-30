@@ -1,9 +1,4 @@
 {
-    header {
-        Server esya
-        -Via
-    }
-
     log {
         output stdout
         format console
@@ -11,6 +6,11 @@
 }
 
 tile.esya.ru {
+    header {
+        Server esya
+        -Via
+    }
+
     reverse_proxy tile_esya_ru:80 {
         header_down Cache-Control "max-age=5184000, public"
     }
