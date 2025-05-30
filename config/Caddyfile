@@ -34,8 +34,7 @@ tile.esya.ru {
 }
 
 
-bigapi.ru {
-    auto_https disable_redirects
+http://bigapi.ru, https://bigapi.ru {
 
     header {
         Server esya-web-engine
