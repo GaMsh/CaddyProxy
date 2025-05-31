@@ -48,7 +48,7 @@ http://bigapi.ru, https://bigapi.ru {
     file_server
 }
 
-new.velogeek.ru {
+velogeek.ru {
     header {
         Server esya-web-engine
         -Via
@@ -62,7 +62,7 @@ new.velogeek.ru {
     file_server
 }
 
-new.gamsh.ru {
+gamsh.ru {
     header {
         Server esya-web-engine
         -Via
