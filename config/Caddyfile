@@ -48,19 +48,19 @@ http://bigapi.ru, https://bigapi.ru {
     file_server
 }
 
-#new.velogeek.ru {
-#    header {
-#        Server esya-web-engine
-#        -Via
-#    }
+new.velogeek.ru {
+    header {
+        Server esya-web-engine
+        -Via
+    }
 
-#    reverse_proxy new_velogeek_ru:80 {
+    reverse_proxy new_velogeek_ru:80 {
 #        header_down Cache-Control "max-age=5184000, public"
-#    }
+    }
 
-#    encode gzip
-#    file_server
-#}
+    encode gzip
+    file_server
+}
 
 new.gamsh.ru {
     header {
