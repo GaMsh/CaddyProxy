@@ -15,7 +15,7 @@ tile.esya.ru {
         header_down Cache-Control "max-age=5184000, public"
     }
 
-	encode zstd br gzip
+	encode zstd gzip
     file_server
 #
 #    @404-410 `{err.status_code} in [404, 410]`
@@ -44,7 +44,7 @@ http://bigapi.ru, https://bigapi.ru {
 #        header_down Cache-Control "max-age=5184000, public"
     }
 
-	encode zstd br gzip
+	encode zstd gzip
     file_server
 }
 
@@ -58,7 +58,7 @@ velogeek.ru {
 #        header_down Cache-Control "max-age=5184000, public"
     }
 
-	encode zstd br gzip
+	encode zstd gzip
     file_server
 }
 
@@ -72,6 +72,6 @@ gamsh.ru {
 #        header_down Cache-Control "max-age=5184000, public"
     }
 
-	encode zstd br gzip
+	encode zstd gzip
     file_server
 }
