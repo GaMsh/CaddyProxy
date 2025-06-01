@@ -28,7 +28,7 @@ tile.esya.ru {
     }
 
 	import static
-	import security
+#	import security
 
     reverse_proxy tile_esya_ru:80 {
 #        header_down Cache-Control "max-age=5184000, public"
@@ -60,7 +60,7 @@ http://bigapi.ru, https://bigapi.ru {
     }
 
 	import static
-	import security
+#	import security
 
     reverse_proxy new_bigapi_ru:80 {
 #        header_down Cache-Control "max-age=5184000, public"
@@ -77,7 +77,7 @@ velogeek.ru {
     }
 
 	import static
-	import security
+#	import security
 
     reverse_proxy new_velogeek_ru:80 {
 #        header_down Cache-Control "max-age=5184000, public"
@@ -94,7 +94,7 @@ gamsh.ru {
     }
 
 	import static
-	import security
+#	import security
 
     reverse_proxy new_gamsh_ru:80 {
 #        header_down Cache-Control "max-age=5184000, public"
