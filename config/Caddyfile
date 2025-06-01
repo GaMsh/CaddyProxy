@@ -48,8 +48,7 @@ tile.esya.ru {
 	import security
 
     reverse_proxy tile_esya_ru:80 {
-        import proxy_header
-#        header_down Cache-Control "max-age=5184000, public"
+
     }
 
 	encode zstd gzip
@@ -81,8 +80,7 @@ http://bigapi.ru, https://bigapi.ru {
 	import security
 
     reverse_proxy new_bigapi_ru:80 {
-        import proxy_header
-#        header_down Cache-Control "max-age=5184000, public"
+
     }
 
 	encode zstd gzip
@@ -99,8 +97,7 @@ velogeek.ru {
 	import security
 
     reverse_proxy new_velogeek_ru:80 {
-        import proxy_header
-#        header_down Cache-Control "max-age=5184000, public"
+
     }
 
 	encode zstd gzip
@@ -117,8 +114,7 @@ gamsh.ru {
 	import security
 
     reverse_proxy new_gamsh_ru:80 {
-        import proxy_header
-#        header_down Cache-Control "max-age=5184000, public"
+
     }
 
 	encode zstd gzip
