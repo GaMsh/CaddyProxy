@@ -31,10 +31,10 @@
 }
 
 tile.esya.ru {
-#    header {
-#        Server esya-web-engine
-#        -Via
-    #}
+    header {
+        Server esya-web-engine
+        -Via
+    }
 
 	import static
 	import security
@@ -61,11 +61,15 @@ tile.esya.ru {
 #    }
 }
 
+test.gamsh.ru {
+    respond "test complete"
+}
+
 http://bigapi.ru, https://bigapi.ru {
-#    header {
-#        Server esya-web-engine
-#        -Via
-    #}
+    header {
+        Server esya-web-engine
+        -Via
+    }
 
 	import static
 	import security
