@@ -15,7 +15,7 @@ tile.esya.ru {
       file
       path *.ico *.css *.js *.gif *.webp *.avif *.jpg *.jpeg *.png *.svg *.woff *.woff2
     }
-    header @static Cache-Control max-age=5184000
+    header @static Cache-Control max-age=7776000
 
     reverse_proxy tile_esya_ru:80 {
         header_down Cache-Control "max-age=5184000, public"
@@ -46,6 +46,12 @@ http://bigapi.ru, https://bigapi.ru {
         -Via
     }
 
+    @static {
+      file
+      path *.ico *.css *.js *.gif *.webp *.avif *.jpg *.jpeg *.png *.svg *.woff *.woff2
+    }
+    header @static Cache-Control max-age=7776000
+
     reverse_proxy new_bigapi_ru:80 {
 #        header_down Cache-Control "max-age=5184000, public"
     }
@@ -60,6 +66,12 @@ velogeek.ru {
         -Via
     }
 
+    @static {
+      file
+      path *.ico *.css *.js *.gif *.webp *.avif *.jpg *.jpeg *.png *.svg *.woff *.woff2
+    }
+    header @static Cache-Control max-age=7776000
+
     reverse_proxy new_velogeek_ru:80 {
 #        header_down Cache-Control "max-age=5184000, public"
     }
@@ -73,6 +85,12 @@ gamsh.ru {
         Server esya-web-engine
         -Via
     }
+
+    @static {
+      file
+      path *.ico *.css *.js *.gif *.webp *.avif *.jpg *.jpeg *.png *.svg *.woff *.woff2
+    }
+    header @static Cache-Control max-age=7776000
 
     reverse_proxy new_gamsh_ru:80 {
 #        header_down Cache-Control "max-age=5184000, public"
