@@ -15,10 +15,10 @@ tile.esya.ru {
       file
       path *.ico *.css *.js *.gif *.webp *.avif *.jpg *.jpeg *.png *.svg *.woff *.woff2
     }
-    header @static Cache-Control max-age=7776000
+    header @static Cache-Control "max-age=7776000, public"
 
     reverse_proxy tile_esya_ru:80 {
-        header_down Cache-Control "max-age=5184000, public"
+#        header_down Cache-Control "max-age=5184000, public"
     }
 
 	encode zstd gzip
