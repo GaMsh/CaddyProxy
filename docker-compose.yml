@@ -1,6 +1,7 @@
 services:
   caddy-proxy:
-    image: caddy:latest
+    build:
+      context: .
     cap_add:
       - NET_ADMIN
     container_name: caddy_main_proxy

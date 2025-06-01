@@ -43,7 +43,7 @@ tile.esya.ru {
 
     }
 
-	encode
+	encode br zstd gzip
     file_server
 #
 #    @404-410 `{err.status_code} in [404, 410]`
@@ -62,7 +62,9 @@ tile.esya.ru {
 }
 
 test.gamsh.ru {
-    respond "test complete"
+    encode br zstd gzip
+
+    respond "test complete - test complete - test complete"
 }
 
 http://bigapi.ru, https://bigapi.ru {
@@ -78,15 +80,15 @@ http://bigapi.ru, https://bigapi.ru {
 
     }
 
-	encode
+	encode br zstd gzip
     file_server
 }
 
 velogeek.ru {
-#    header {
-#        Server esya-web-engine
-#        -Via
-    #}
+    header {
+        Server esya-web-engine
+        -Via
+    }
 
 	import static
 	import security
@@ -95,15 +97,15 @@ velogeek.ru {
 
     }
 
-	encode
+	encode br zstd gzip
     file_server
 }
 
 gamsh.ru {
-#    header {
-#        Server esya-web-engine
-#        -Via
-    #}
+    header {
+        Server esya-web-engine
+        -Via
+    }
 
 	import static
 	import security
@@ -112,6 +114,6 @@ gamsh.ru {
 
     }
 
-	encode
+	encode br zstd gzip
     file_server
 }
