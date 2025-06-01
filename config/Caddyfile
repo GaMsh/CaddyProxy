@@ -44,11 +44,11 @@ tile.esya.ru {
         -Via
     }
 
-	import proxy_header
 	import static
 	import security
 
     reverse_proxy tile_esya_ru:80 {
+        import proxy_header
 #        header_down Cache-Control "max-age=5184000, public"
     }
 
@@ -77,11 +77,11 @@ http://bigapi.ru, https://bigapi.ru {
         -Via
     }
 
-	import proxy_header
 	import static
 	import security
 
     reverse_proxy new_bigapi_ru:80 {
+        import proxy_header
 #        header_down Cache-Control "max-age=5184000, public"
     }
 
@@ -95,11 +95,11 @@ velogeek.ru {
         -Via
     }
 
-	import proxy_header
 	import static
 	import security
 
     reverse_proxy new_velogeek_ru:80 {
+        import proxy_header
 #        header_down Cache-Control "max-age=5184000, public"
     }
 
@@ -113,11 +113,11 @@ gamsh.ru {
         -Via
     }
 
-	import proxy_header
 	import static
 	import security
 
     reverse_proxy new_gamsh_ru:80 {
+        import proxy_header
 #        header_down Cache-Control "max-age=5184000, public"
     }
 
