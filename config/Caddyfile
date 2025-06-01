@@ -19,7 +19,7 @@
 		Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
 		X-Content-Type-Options nosniff
 		Referrer-Policy no-referrer-when-downgrade
-        Content-Security-Policy "default-src 'self'; connect-src 'self'; font-src 'self' https://fonts.gstatic.com/; style-src 'self' https://fonts.googleapis.com/; script-src 'unsafe-inline' https://mc.yandex.ru/;"
+        Content-Security-Policy "default-src 'self'; connect-src 'self'; font-src 'self' https://fonts.gstatic.com/; style-src 'self' https://fonts.googleapis.com/;"
         Cross-Origin-Embedder-Policy "require-corp"
         Cross-Origin-Opener-Policy "same-origin" # -allow-popups"
         Cross-Origin-Resource-Policy "same-origin"
