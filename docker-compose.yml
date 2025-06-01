@@ -5,21 +5,19 @@ services:
       - NET_ADMIN
     container_name: caddy_main_proxy
     restart: unless-stopped
-#    environment:
-#      CADDY_INGRESS_NETWORKS: web_network
     ports:
+      # HTTP
       - target: 80
         published: 80
         protocol: tcp
-        mode: host
+      # HTTPS
       - target: 443
         published: 443
         protocol: tcp
-        mode: host
+      # HTTP/3
       - target: 443
         published: 443
         protocol: udp
-        mode: host
     volumes:
       - ./config/Caddyfile:/etc/caddy/Caddyfile
       - caddy_proxy_data:/data
