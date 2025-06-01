@@ -5,12 +5,6 @@
     }
 }
 
-(proxy_header) {
-    header_up X-Real-IP {remote_host}
-    header_up X-Forwarded-For {remote_host}
-    header_up X-Forwarded-Proto {scheme}
-}
-
 (static) {
     @static {
       file
@@ -25,24 +19,22 @@
 		Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
 		X-Content-Type-Options nosniff
 		Referrer-Policy no-referrer-when-downgrade
-        Content-Security-Policy "default-src 'self'; font-src 'self' https://fonts.gstatic.com/; style-src 'self' https://fonts.googleapis.com/; script-src 'self' https://mc.yandex.ru/;
-#        script-src 'self' https://plausible.io; connect-src 'self'"
+        Content-Security-Policy "default-src 'self'; connect-src 'self'; font-src 'self' https://fonts.gstatic.com/; style-src 'self' https://fonts.googleapis.com/; script-src 'self' https://mc.yandex.ru/;
         Cross-Origin-Embedder-Policy "require-corp"
         Cross-Origin-Opener-Policy "same-origin-allow-popups"
         Cross-Origin-Resource-Policy "same-origin"
-        Permissions-Policy "cross-origin-isolated=(self)"
+        Permissions-Policy "cross-origin-isolated=(self), publickey-credentials-get=(self), screen-wake-lock=(self)"
 #        Permissions-Policy "accelerometer=(self), autoplay=(self), camera=(self), cross-origin-isolated=(self), display-capture=(self), encrypted-media=(self), fullscreen=(self), geolocation=(self), gyroscope=(self), keyboard-map=(self), magnetometer=(self), microphone=(self), midi=(self), payment=(self), picture-in-picture=(self), publickey-credentials-get=(self), screen-wake-lock=(self), sync-xhr=(self), usb=(self), xr-spatial-tracking=(self)"
-#        Server "baty.net"
         X-Frame-Options DENY
         X-XSS-Protection "0"
 	}
 }
 
 tile.esya.ru {
-    header {
-        Server esya-web-engine
-        -Via
-    }
+#    header {
+#        Server esya-web-engine
+#        -Via
+    #}
 
 	import static
 	import security
@@ -71,10 +63,10 @@ tile.esya.ru {
 
 
 http://bigapi.ru, https://bigapi.ru {
-    header {
-        Server esya-web-engine
-        -Via
-    }
+#    header {
+#        Server esya-web-engine
+#        -Via
+    #}
 
 	import static
 	import security
@@ -88,10 +80,10 @@ http://bigapi.ru, https://bigapi.ru {
 }
 
 velogeek.ru {
-    header {
-        Server esya-web-engine
-        -Via
-    }
+#    header {
+#        Server esya-web-engine
+#        -Via
+    #}
 
 	import static
 	import security
@@ -105,10 +97,10 @@ velogeek.ru {
 }
 
 gamsh.ru {
-    header {
-        Server esya-web-engine
-        -Via
-    }
+#    header {
+#        Server esya-web-engine
+#        -Via
+    #}
 
 	import static
 	import security
