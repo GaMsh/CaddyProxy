@@ -5,17 +5,30 @@
     }
 }
 
+(static) {
+    @static {
+      file
+      path *.ico *.css *.js *.gif *.webp *.avif *.jpg *.jpeg *.png *.svg *.woff *.woff2, *.json, *.xml, *.gpx
+    }
+    header @static Cache-Control "max-age=7776000, public"
+}
+
+(security) {
+	header {
+		Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+		X-Content-Type-Options nosniff
+		Referrer-Policy no-referrer-when-downgrade
+	}
+}
+
 tile.esya.ru {
     header {
         Server esya-web-engine
         -Via
     }
 
-    @static {
-      file
-      path *.ico *.css *.js *.gif *.webp *.avif *.jpg *.jpeg *.png *.svg *.woff *.woff2
-    }
-    header @static Cache-Control "max-age=7776000, public"
+	import static
+	import security
 
     reverse_proxy tile_esya_ru:80 {
 #        header_down Cache-Control "max-age=5184000, public"
@@ -46,11 +59,8 @@ http://bigapi.ru, https://bigapi.ru {
         -Via
     }
 
-    @static {
-      file
-      path *.ico *.css *.js *.gif *.webp *.avif *.jpg *.jpeg *.png *.svg *.woff *.woff2
-    }
-    header @static Cache-Control max-age=7776000
+	import static
+	import security
 
     reverse_proxy new_bigapi_ru:80 {
 #        header_down Cache-Control "max-age=5184000, public"
@@ -66,11 +76,8 @@ velogeek.ru {
         -Via
     }
 
-    @static {
-      file
-      path *.ico *.css *.js *.gif *.webp *.avif *.jpg *.jpeg *.png *.svg *.woff *.woff2
-    }
-    header @static Cache-Control max-age=7776000
+	import static
+	import security
 
     reverse_proxy new_velogeek_ru:80 {
 #        header_down Cache-Control "max-age=5184000, public"
@@ -86,11 +93,8 @@ gamsh.ru {
         -Via
     }
 
-    @static {
-      file
-      path *.ico *.css *.js *.gif *.webp *.avif *.jpg *.jpeg *.png *.svg *.woff *.woff2
-    }
-    header @static Cache-Control max-age=7776000
+	import static
+	import security
 
     reverse_proxy new_gamsh_ru:80 {
 #        header_down Cache-Control "max-age=5184000, public"
