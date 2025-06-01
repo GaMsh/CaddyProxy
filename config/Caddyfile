@@ -20,9 +20,9 @@
 		X-Content-Type-Options nosniff
 		Referrer-Policy no-referrer-when-downgrade
 #        Content-Security-Policy "default-src 'self'; connect-src 'self'; font-src 'self' https://fonts.gstatic.com/; style-src 'self' https://fonts.googleapis.com/;"
-        Cross-Origin-Embedder-Policy "require-corp"
-        Cross-Origin-Opener-Policy "same-origin" # -allow-popups"
-        Cross-Origin-Resource-Policy "same-origin"
+#        Cross-Origin-Embedder-Policy "require-corp"
+#        Cross-Origin-Opener-Policy "same-origin" # -allow-popups"
+#        Cross-Origin-Resource-Policy "same-origin"
         Permissions-Policy "cross-origin-isolated=(self), publickey-credentials-get=(self), screen-wake-lock=(self)"
 #        Permissions-Policy "accelerometer=(self), autoplay=(self), camera=(self), cross-origin-isolated=(self), display-capture=(self), encrypted-media=(self), fullscreen=(self), geolocation=(self), gyroscope=(self), keyboard-map=(self), magnetometer=(self), microphone=(self), midi=(self), payment=(self), picture-in-picture=(self), publickey-credentials-get=(self), screen-wake-lock=(self), sync-xhr=(self), usb=(self), xr-spatial-tracking=(self)"
         X-Frame-Options DENY
