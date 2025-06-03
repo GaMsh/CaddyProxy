@@ -46,7 +46,8 @@ tile.esya.ru {
 	import static
 	import security
 
-    reverse_proxy tile_esya_ru:80 {
+    reverse_proxy * h2c://tile_esya_ru
+ #   tile_esya_ru {
 
     }
 
