@@ -49,7 +49,7 @@ tile.esya.ru {
     reverse_proxy * h2c://tile_esya_ru
  #   tile_esya_ru {
 
-    }
+ #   }
 
 	encode br zstd gzip
     file_server
