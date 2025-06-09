@@ -18,12 +18,12 @@
       path *.ico *.css *.js *.gif *.webp *.avif *.jpg *.jpeg *.png *.svg *.woff *.woff2, *.json, *.xml, *.gpx
     }
     header @static Cache-Control "max-age=7776000, public"
-    header @static Expires 3m
+#    header @static Expires 3m
 }
 
 (security) {
 	header {
-		Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+		Strict-Transport-Security "max-age=7776000; includeSubDomains; preload"
 		X-Content-Type-Options nosniff
 		Referrer-Policy no-referrer-when-downgrade
 #        Content-Security-Policy "default-src 'self'; connect-src 'self'; font-src 'self' https://fonts.gstatic.com/; style-src 'self' https://fonts.googleapis.com/;"
@@ -47,11 +47,7 @@ tile.esya.ru {
 	import security
 
     reverse_proxy * h2c://tile_esya_ru
- #   tile_esya_ru {
-
- #   }
-
-	encode br zstd gzip
+    encode br zstd gzip
     file_server
 #
 #    @404-410 `{err.status_code} in [404, 410]`
@@ -69,12 +65,6 @@ tile.esya.ru {
 #    }
 }
 
-test.gamsh.ru {
-    encode br zstd gzip
-
-    respond "test complete - test complete - test complete"
-}
-
 http://bigapi.ru, https://bigapi.ru {
     header {
         Server esya-web-engine
@@ -85,10 +75,7 @@ http://bigapi.ru, https://bigapi.ru {
 	import static
 	import security
 
-    reverse_proxy new_bigapi_ru:80 {
-
-    }
-
+    reverse_proxy * h2c://new_bigapi_ru
 	encode br zstd gzip
     file_server
 }
@@ -103,10 +90,7 @@ velogeek.ru {
 	import static
 	import security
 
-    reverse_proxy new_velogeek_ru:80 {
-
-    }
-
+    reverse_proxy * h2c://new_velogeek_ru
 	encode br zstd gzip
     file_server
 }
@@ -121,10 +105,7 @@ gamsh.ru {
 	import static
 	import security
 
-    reverse_proxy new_gamsh_ru:80 {
-
-    }
-
+    reverse_proxy * h2c://new_gamsh_ru
 	encode br zstd gzip
     file_server
 }
