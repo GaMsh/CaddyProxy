@@ -64,10 +64,6 @@ tile.esya.ru {
         -Via
     }
 
-    expires {
-        match *.png 1y
-    }
-
 	import static
 	import security
 
