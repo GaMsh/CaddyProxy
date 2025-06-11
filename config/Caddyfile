@@ -13,9 +13,7 @@
 }
 
 (expires) {
-    expires {
-        match /assets/* 1y
-    }
+
 }
 
 (static) {
