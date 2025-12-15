@@ -19,7 +19,7 @@
 (static) {
     @static {
       file
-      path *.ico *.css *.js *.gif *.webp *.avif *.jpg *.jpeg *.png *.svg *.woff *.woff2, *.json, *.xml, *.gpx
+      path *.ico *.css *.js *.gif *.webp *.avif *.jpg *.jpeg *.png *.svg *.woff *.woff2, *.json, *.xml, *.gpx, *.kml, *.fit
     }
     header @static Cache-Control "max-age=31536000, public, immutable"
 #    header @static Expires 3m
@@ -133,3 +133,20 @@ gamsh.ru {
 	encode br zstd gzip
     file_server
 }
+
+new.esya.ru {
+    header {
+       Server ews
+       -Via
+   }
+
+    import assets
+    import static
+    import security
+    import expires
+
+    reverse_proxy * h2c://new_esya_ru
+    encode br zstd gzip
+    file_server
+}
+
