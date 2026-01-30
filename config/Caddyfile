@@ -150,3 +150,35 @@ new.esya.ru {
     file_server
 }
 
+esya.ru {
+    header {
+       Server ews
+       -Via
+   }
+
+    import assets
+    import static
+    import security
+    import expires
+
+    reverse_proxy * h2c://new_esya_ru
+    encode br zstd gzip
+    file_server
+}
+
+gamiko.ru {
+    header {
+       Server ews
+       -Via
+   }
+
+    import assets
+    import static
+    import security
+    import expires
+
+    reverse_proxy * h2c://gamiko.ru
+    encode br zstd gzip
+    file_server
+}
+
