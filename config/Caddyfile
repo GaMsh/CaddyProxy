@@ -140,7 +140,7 @@ i.esya.ru {
        Cache-Control "public, max-age=31536000, immutable"
        -Via
     }
-    reverse_proxy new_esya_ru_imgproxy {
+    reverse_proxy * new_esya_ru_imgproxy:8080 {
         header_up X-Real-IP {remote_ip}
     }
 }
