@@ -161,18 +161,18 @@ esya.ru {
     file_server
 }
 
-gamiko.ru {
-    header {
-       Server ews
-       -Via
-    }
-
-    import assets
-    import static
-    import security
-    import expires
-
-    reverse_proxy * h2c://gamiko.ru
-    encode br zstd gzip
-    file_server
-}
+#gamiko.ru {
+#    header {
+#       Server ews
+#       -Via
+#    }
+#
+#    import assets
+#    import static
+#    import security
+#    import expires
+#
+#    reverse_proxy * h2c://gamiko.ru
+#    encode br zstd gzip
+#    file_server
+#}
