@@ -68,7 +68,7 @@ tile.esya.ru {
 	import security
 
     reverse_proxy * h2c://tile_esya_ru
-    encode br zstd gzip
+    encode zstd gzip
     file_server
 #
 #    @404-410 `{err.status_code} in [404, 410]`
@@ -98,7 +98,7 @@ http://bigapi.ru, https://bigapi.ru {
     import expires
 
     reverse_proxy * h2c://new_bigapi_ru
-	encode br zstd gzip
+	encode zstd gzip
     file_server
 }
 
@@ -114,7 +114,7 @@ velogeek.ru {
     import expires
 
     reverse_proxy * h2c://new_velogeek_ru
-	encode br zstd gzip
+	encode zstd gzip
     file_server
 }
 
@@ -130,7 +130,7 @@ gamsh.ru {
     import expires
 
     reverse_proxy * h2c://new_gamsh_ru
-	encode br zstd gzip
+	encode zstd gzip
     file_server
 }
 
@@ -145,7 +145,7 @@ esya.ru, i.esya.ru {
     import static
     import security
     import expires
-    encode br zstd gzip
+    encode zstd gzip
 
     reverse_proxy * h2c://new_esya_ru
 }
@@ -162,6 +162,6 @@ esya.ru, i.esya.ru {
 #    import expires
 #
 #    reverse_proxy * h2c://gamiko.ru
-#    encode br zstd gzip
+#    encode zstd gzip
 #    file_server
 #}

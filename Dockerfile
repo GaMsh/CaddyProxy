@@ -1,7 +1,7 @@
 FROM caddy:2.11-builder AS builder
 
-RUN xcaddy build \
-    --with github.com/ueffel/caddy-brotli
+#RUN xcaddy build \
+#    --with github.com/ueffel/caddy-brotli
 
 FROM caddy:2.11
 
