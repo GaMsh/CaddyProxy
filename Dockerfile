@@ -5,4 +5,5 @@
 
 FROM caddy:2.11
 
-COPY --from=builder /usr/bin/caddy /usr/bin/caddy
+#COPY --from=builder /usr/bin/caddy /usr/bin/caddy
+COPY /usr/bin/caddy /usr/bin/caddy
