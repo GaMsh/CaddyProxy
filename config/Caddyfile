@@ -129,9 +129,20 @@ gamsh.ru {
 	import security
     import expires
 
-    reverse_proxy * h2c://new_gamsh_ru
-	encode zstd gzip
-    file_server
+    # OwnTracks: MQTT over WS (/mqtt) + Recorder UI/API/live WS (/own)
+    # HTTP/1.1 upstream — h2c breaks WebSocket upgrade to Mosquitto/Recorder
+    @owntracks {
+        path /mqtt* /own*
+    }
+    handle @owntracks {
+        reverse_proxy http://new_gamsh_ru
+    }
+
+    handle {
+        reverse_proxy * h2c://new_gamsh_ru
+        encode zstd gzip
+        file_server
+    }
 }
 
 
