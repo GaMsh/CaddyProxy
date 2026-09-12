@@ -161,18 +161,22 @@ esya.ru, i.esya.ru {
     reverse_proxy * h2c://new_esya_ru
 }
 
-#gamiko.ru {
-#    header {
-#       Server ews
-#       -Via
-#    }
-#
-#    import assets
-#    import static
-#    import security
-#    import expires
-#
-#    reverse_proxy * h2c://gamiko.ru
-#    encode zstd gzip
-#    file_server
-#}
+www.gamiko.ru {
+    redir https://gamiko.ru{uri} permanent
+}
+
+gamiko.ru {
+    header {
+        Server ews
+        -Via
+    }
+
+    import assets
+    import static
+    import security
+    import expires
+
+    reverse_proxy * h2c://gamiko-app
+    encode zstd gzip
+    file_server
+}
