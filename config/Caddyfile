@@ -58,112 +58,94 @@
     }
 }
 
-tile.esya.ru {
-    header {
-        Server ews
-        -Via
-    }
-
-	import static
-	import security
-
-    reverse_proxy * h2c://tile_esya_ru
-    encode zstd gzip
-    file_server
-#
-#    @404-410 `{err.status_code} in [404, 410]`
-#    handle @404-410 {
-#        respond "It's a 404 or 410 error!"
+#tile.esya.ru {
+#    header {
+#        Server ews
+#        -Via
 #    }
 #
-#    @5xx `{err.status_code} >= 500 && {err.status_code} < 600`
-#    handle @5xx {
-#        respond "It's a 5xx error."
+#	import static
+#	import security
+#
+#    reverse_proxy * h2c://tile_esya_ru
+#    encode zstd gzip
+#    file_server
+#}
+#
+#http://bigapi.ru, https://bigapi.ru {
+#    header {
+#        Server ews
+#        -Via
+#    }
+#
+#    import assets
+#	import static
+#	import security
+#    import expires
+#
+#    reverse_proxy * h2c://new_bigapi_ru
+#	encode zstd gzip
+#    file_server
+#}
+#
+#velogeek.ru {
+#    header {
+#        Server ews
+#        -Via
+#    }
+#
+#    import assets
+#	import static
+#	import security
+#    import expires
+#
+#    reverse_proxy * h2c://new_velogeek_ru
+#	encode zstd gzip
+#    file_server
+#}
+#
+#gamsh.ru {
+#    header {
+#        Server ews
+#        -Via
+#    }
+#
+#    import assets
+#	import static
+#	import security
+#    import expires
+#
+#    # OwnTracks: MQTT over WS (/mqtt) + Recorder UI/API/live WS (/own)
+#    # HTTP/1.1 upstream — h2c breaks WebSocket upgrade to Mosquitto/Recorder
+#    @owntracks {
+#        path /mqtt* /own*
+#    }
+#    handle @owntracks {
+#        reverse_proxy http://new_gamsh_ru
 #    }
 #
 #    handle {
-#        respond "It's another error"
+#        reverse_proxy * h2c://new_gamsh_ru
+#        encode zstd gzip
+#        file_server
 #    }
-}
-
-http://bigapi.ru, https://bigapi.ru {
-    header {
-        Server ews
-        -Via
-    }
-
-    import assets
-	import static
-	import security
-    import expires
-
-    reverse_proxy * h2c://new_bigapi_ru
-	encode zstd gzip
-    file_server
-}
-
-velogeek.ru {
-    header {
-        Server ews
-        -Via
-    }
-
-    import assets
-	import static
-	import security
-    import expires
-
-    reverse_proxy * h2c://new_velogeek_ru
-	encode zstd gzip
-    file_server
-}
-
-gamsh.ru {
-    header {
-        Server ews
-        -Via
-    }
-
-    import assets
-	import static
-	import security
-    import expires
-
-    # OwnTracks: MQTT over WS (/mqtt) + Recorder UI/API/live WS (/own)
-    # HTTP/1.1 upstream — h2c breaks WebSocket upgrade to Mosquitto/Recorder
-    @owntracks {
-        path /mqtt* /own*
-    }
-    handle @owntracks {
-        reverse_proxy http://new_gamsh_ru
-    }
-
-    handle {
-        reverse_proxy * h2c://new_gamsh_ru
-        encode zstd gzip
-        file_server
-    }
-}
-
-
-esya.ru, i.esya.ru {
-    header {
-        Server ews
-        -Via
-    }
-
-    import assets
-    import static
-    import security
-    import expires
-    encode zstd gzip
-
-    reverse_proxy * h2c://new_esya_ru
-}
-
-www.gamiko.ru {
-    redir https://gamiko.ru{uri} permanent
-}
+#}
+#
+#
+#esya.ru, i.esya.ru {
+#    header {
+#        Server ews
+#        -Via
+#    }
+#
+#    import assets
+#    import static
+#    import security
+#    import expires
+#    encode zstd gzip
+#
+#    reverse_proxy * h2c://new_esya_ru
+#}
 
 gamiko.ru {
     header {
@@ -175,8 +157,7 @@ gamiko.ru {
     import static
     import security
     import expires
+    encode zstd gzip
 
     reverse_proxy * h2c://gamiko-app
-    encode zstd gzip
-    file_server
 }
