@@ -131,7 +131,7 @@ gamsh.ru {
     }
 }
 
-esya.ru, i.esya.ru {
+esya.ru {
     header {
         Server ews
         -Via
