@@ -131,20 +131,20 @@ gamsh.ru {
     }
 }
 
-esya.ru {
-    header {
-        Server ews
-        -Via
-    }
+#esya.ru, i.esya.ru {
+#    header {
+#        Server ews
+#        -Via
+#    }
 
-    import assets
-    import static
-    import security
-    import expires
-    encode zstd gzip
+#    import assets
+#    import static
+#    import security
+#    import expires
+#    encode zstd gzip
 
-    reverse_proxy * h2c://new_esya_ru
-}
+#    reverse_proxy * h2c://new_esya_ru
+#}
 
 gamiko.ru {
     header {
