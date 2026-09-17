@@ -160,3 +160,26 @@ gamiko.ru {
 
     reverse_proxy * h2c://gamiko-app
 }
+
+pmtiles.ru {
+    header {
+        Server ews
+        -Via
+    }
+
+    import assets
+    import static
+    import security
+    import expires
+
+    @tiles path /tiles/*
+    handle @tiles {
+        reverse_proxy h2c://pmtiles_ru
+    }
+
+    handle {
+        reverse_proxy * h2c://pmtiles_ru
+        encode zstd gzip
+        file_server
+    }
+}
