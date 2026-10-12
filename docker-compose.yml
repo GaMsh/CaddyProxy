@@ -28,6 +28,11 @@ networks:
   web_network:
     driver: bridge
     external: true
+    enable_ipv6: true
+    ipam:
+      config:
+          - subnet: 172.28.0.0/16
+          - subnet: fd00:1234:5678:2::/64
 
 volumes:
   caddy_proxy_data:
