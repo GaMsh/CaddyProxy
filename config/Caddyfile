@@ -83,7 +83,7 @@ http://bigapi.ru, https://bigapi.ru {
 	import security
     import expires
 
-    reverse_proxy * h2c://new_bigapi_ru
+    reverse_proxy * h2c://bigapi_ru
 	encode zstd gzip
     file_server
 }
@@ -99,7 +99,7 @@ velogeek.ru {
 	import security
     import expires
 
-    reverse_proxy * h2c://new_velogeek_ru
+    reverse_proxy * h2c://velogeek_ru
 	encode zstd gzip
     file_server
 }
@@ -115,17 +115,8 @@ gamsh.ru {
 	import security
     import expires
 
-    # OwnTracks: MQTT over WS (/mqtt) + Recorder UI/API/live WS (/own)
-    # HTTP/1.1 upstream — h2c breaks WebSocket upgrade to Mosquitto/Recorder
-    @owntracks {
-        path /mqtt* /own*
-    }
-    handle @owntracks {
-        reverse_proxy http://new_gamsh_ru
-    }
-
     handle {
-        reverse_proxy * h2c://new_gamsh_ru
+        reverse_proxy * h2c://gamsh_ru
         encode zstd gzip
         file_server
     }
@@ -143,7 +134,7 @@ esya.ru, i.esya.ru {
     import expires
     encode zstd gzip
 
-    reverse_proxy * h2c://new_esya_ru
+    reverse_proxy * h2c://esya_ru
 }
 
 gamiko.ru {
@@ -158,7 +149,7 @@ gamiko.ru {
     import expires
     encode zstd gzip
 
-    reverse_proxy * h2c://gamiko-app
+    reverse_proxy * h2c://gamiko_ru
 }
 
 pmtiles.ru {
