@@ -183,3 +183,18 @@ pmtiles.ru {
         file_server
     }
 }
+
+brouter.ru {
+    header {
+        Server ews
+        -Via
+    }
+
+    import assets
+    import static
+    import security
+    import expires
+    encode zstd gzip
+
+    reverse_proxy * h2c://brouter_ru
+}
